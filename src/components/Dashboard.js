@@ -1,39 +1,16 @@
 import {connect} from "react-redux";
-import Card from "./Card";
+import Unanswered from "./Unanswered";
+import Answered from "./Answered";
 
 const Dashboard = ({authedUser, questions, users}) => {
-
-    const unanswered = (question) => (!question.optionOne.votes.includes(authedUser.id)
-        && !question.optionTwo.votes.includes(authedUser.id));
-
-    const answered = (question) => (question.optionOne.votes.includes(authedUser.id)
-        || question.optionTwo.votes.includes(authedUser.id));
 
     return (
         <div className="ml-3">
             <h1 className="text-4xl font-bold mb-[50px] mt-[35px]" data-testid="heading">Dashboard</h1>
+            <Unanswered/>
 
-            <h2 className="text-2xl font-bold mt-6 ml-9 mb-4">New Questions</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-6 mb-[50px]">
-                {questions
-                    .filter(unanswered)
-                    .map((question) => (
-                        <li key={question.id}>
-                            <Card question={question} author={users[question.author]}/>
-                        </li>
-                    ))}
-            </ul>
+            <Answered />   
 
-            <h2 className="text-2xl font-bold mt-6 ml-9 mb-4">Answered Questions</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-6">
-                {questions
-                    .filter(answered)
-                    .map((question) => (
-                        <li key={question.id}>
-                            <Card question={question} author={users[question.author]}/>
-                        </li>
-                    ))}
-            </ul>
         </div>
     );
 }

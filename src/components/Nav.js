@@ -20,6 +20,12 @@ const Nav = ({dispatch, authedUserId, author}) => {
                   className="font-medium px-3 py-2 text-slate-700 hover:text-slate-100">New
                 Poll
             </Link>
+            <Link to="/answered"
+                  className="font-medium px-3 py-2 text-slate-700 hover:text-slate-100">answered
+            </Link>
+            <Link to="/unanswered"
+                  className="font-medium px-3 py-2 text-slate-700 hover:text-slate-100">Unanswered
+            </Link>
             </div>
 
             <div>
