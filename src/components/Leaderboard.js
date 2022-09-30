@@ -23,7 +23,8 @@ const Leaderboard = ({users}) => {
                             <td className="border-b border-slate-100 dark:border-slate-200 p-4 pl-8 text-slate-500 dark:text-slate-800">{Object.keys(user.answers).length}</td>
                             <td className="border-b border-slate-100 dark:border-slate-200 p-4 pl-8 text-slate-500 dark:text-slate-800">{user.questions.length}</td>
                         </tr>
-                    ))
+
+                    )).sort((a, b) => a.total - b.total)
                 }
                 </tbody>
             </table>

@@ -1,11 +1,21 @@
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { handleLogin } from "../actions/authedUser";
+//import { _getUsers } from "../util/_DATA";
 
-const Login = ({ dispatch, loggedIn, authedUser }) => {
-    const [username, setUsername] = useState("sarahedo");
-    const [password, setPassword] = useState("password123");
+const Login = ({ dispatch, loggedIn, users}) => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    // const [users, getUsers] = useState([]);
+
+    // useEffect(()=>{
+    //     const getUsers = async ()=>{
+    //      const users = await _getUsers();
+    //      getUsers(users);
+    //     }; 
+    //     getUsers();
+    //   },[]);
 
     if (loggedIn) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -30,9 +40,33 @@ const Login = ({ dispatch, loggedIn, authedUser }) => {
         setPassword("");
     };
 
+    const onSelect = (e)=>{
+        let ourUser =  users.find(user => user.id == e.target.value)
+        if(ourUser) {
+            setUsername(ourUser.id)
+            setPassword(ourUser.password)
+        }
+    }
+
     return (
         <div className="w-[450px] mx-auto">
             <h1 className="text-3xl font-bold mt-9 mb-5 text-center" data-testid="login-heading">Login</h1>
+
+            <div className="mt-4">
+                <span className="mb-2 text-xl font-bold">Choose a User:</span>
+                <br />
+                <select onChange={onSelect} className="bg-[#0ca5e9] mb-8 p-3 w-full text-white">
+                { 
+                    users.map((user) => (
+                        <option key={user.id} value={user.id}>
+                            {user.name}
+                        </option>
+
+                    ))
+                } 
+                 </select>
+            </div>
+
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username" className="block text-sm font-medium text-slate-700">Username</label>
@@ -70,10 +104,7 @@ const Login = ({ dispatch, loggedIn, authedUser }) => {
             </form>
 
 
-            <div className="mt-4">
-                <div><strong>UserName:</strong> {username}</div>
-                <div><strong>Password:</strong> {password}</div>
-            </div>
+
 
         </div>
 
@@ -81,8 +112,9 @@ const Login = ({ dispatch, loggedIn, authedUser }) => {
     );
 };
 
-const mapStateToProps = ({ authedUser }) => ({
+const mapStateToProps = ({ authedUser, users }) => ({
     loggedIn: !!authedUser,
+    users: Object.values(users)
 });
 
 export default connect(mapStateToProps)(Login);
