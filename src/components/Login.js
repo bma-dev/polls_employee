@@ -48,7 +48,7 @@ const Login = ({ dispatch, loggedIn, users}) => {
         }
     }
 
-    return (
+    return (  
         <div className="w-[450px] mx-auto">
             <h1 className="text-3xl font-bold mt-9 mb-5 text-center" data-testid="login-heading">Login</h1>
 
