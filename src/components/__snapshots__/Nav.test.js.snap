@@ -6,75 +6,111 @@ Object {
   "baseElement": <body>
     <div>
       <nav
-        class="flex justify-center space-x-4"
+        class="flex justify-between space-x-4 m-3 p-4 bg-[#65C9FF]"
+      >
+        <div
+          class="mt-2"
+        >
+          <a
+            class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
+            href="/leaderboard"
+          >
+            Leaderboard
+          </a>
+          <a
+            class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
+            href="/add"
+          >
+            New Poll
+          </a>
+          <a
+            class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
+            href="/answered"
+          >
+            answered
+          </a>
+          <a
+            class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
+            href="/unanswered"
+          >
+            Unanswered
+          </a>
+        </div>
+        <div>
+          <span
+            class="font-medium px-3 py-2 text-white"
+            data-testid="user-information"
+          >
+            User: 
+            sarahedo
+          </span>
+          <button
+            class="font-medium px-3 py-2 text-red"
+          >
+            Logout
+          </button>
+        </div>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="flex justify-between space-x-4 m-3 p-4 bg-[#65C9FF]"
+    >
+      <div
+        class="mt-2"
       >
         <a
-          class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+          class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
           href="/"
         >
           Home
         </a>
         <a
-          class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+          class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
           href="/leaderboard"
         >
           Leaderboard
         </a>
         <a
-          class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+          class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
           href="/add"
         >
           New Poll
         </a>
+        <a
+          class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
+          href="/answered"
+        >
+          answered
+        </a>
+        <a
+          class="font-medium px-3 py-2 text-slate-700 hover:text-slate-100"
+          href="/unanswered"
+        >
+          Unanswered
+        </a>
+      </div>
+      <div>
         <span
-          class="font-medium px-3 py-2 text-slate-700"
+          class="font-medium px-3 py-2 text-white"
           data-testid="user-information"
         >
           User: 
           sarahedo
         </span>
         <button
-          class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+          class="font-medium px-3 py-2 text-red"
         >
           Logout
         </button>
-      </nav>
-    </div>
-  </body>,
-  "container": <div>
-    <nav
-      class="flex justify-center space-x-4"
-    >
-      <a
-        class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
-        href="/"
-      >
-        Home
-      </a>
-      <a
-        class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
-        href="/leaderboard"
-      >
-        Leaderboard
-      </a>
-      <a
-        class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
-        href="/add"
-      >
-        New Poll
-      </a>
-      <span
-        class="font-medium px-3 py-2 text-slate-700"
-        data-testid="user-information"
-      >
-        User: 
-        sarahedo
-      </span>
-      <button
-        class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
-      >
-        Logout
-      </button>
+      </div>
     </nav>
   </div>,
   "debug": [Function],

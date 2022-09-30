@@ -5,13 +5,28 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
+      <div
+        class="w-[450px] mx-auto"
+      >
         <h1
-          class="text-3xl font-bold mt-9"
+          class="text-3xl font-bold mt-9 mb-5 text-center"
           data-testid="login-heading"
         >
           Login
         </h1>
+        <div
+          class="mt-4"
+        >
+          <span
+            class="mb-2 text-xl font-bold"
+          >
+            Choose a User:
+          </span>
+          <br />
+          <select
+            class="bg-[#0ca5e9] mb-8 p-3 w-full text-white"
+          />
+        </div>
         <form>
           <div>
             <label
@@ -29,7 +44,7 @@ Object {
                 id="username"
                 name="username"
                 type="text"
-                value="sarahedo"
+                value=""
               />
             </div>
           </div>
@@ -51,7 +66,7 @@ Object {
                 id="password"
                 name="password"
                 type="password"
-                value="password123"
+                value=""
               />
             </div>
           </div>
@@ -59,7 +74,7 @@ Object {
             class="mt-6 text-right"
           >
             <button
-              class="bg-sky-500 hover:bg-sky-700 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white"
+              class="bg-sky-500 hover:bg-sky-700 px-5 py-2.5 text-sm leading-5 font-semibold text-white w-[100%]"
               data-testid="submit"
               type="submit"
             >
@@ -71,13 +86,28 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div>
+    <div
+      class="w-[450px] mx-auto"
+    >
       <h1
-        class="text-3xl font-bold mt-9"
+        class="text-3xl font-bold mt-9 mb-5 text-center"
         data-testid="login-heading"
       >
         Login
       </h1>
+      <div
+        class="mt-4"
+      >
+        <span
+          class="mb-2 text-xl font-bold"
+        >
+          Choose a User:
+        </span>
+        <br />
+        <select
+          class="bg-[#0ca5e9] mb-8 p-3 w-full text-white"
+        />
+      </div>
       <form>
         <div>
           <label
@@ -95,7 +125,7 @@ Object {
               id="username"
               name="username"
               type="text"
-              value="sarahedo"
+              value=""
             />
           </div>
         </div>
@@ -117,7 +147,7 @@ Object {
               id="password"
               name="password"
               type="password"
-              value="password123"
+              value=""
             />
           </div>
         </div>
@@ -125,7 +155,7 @@ Object {
           class="mt-6 text-right"
         >
           <button
-            class="bg-sky-500 hover:bg-sky-700 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white"
+            class="bg-sky-500 hover:bg-sky-700 px-5 py-2.5 text-sm leading-5 font-semibold text-white w-[100%]"
             data-testid="submit"
             type="submit"
           >
