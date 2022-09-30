@@ -9,8 +9,6 @@ const Dashboard = ({authedUser, questions, users}) => {
             <h1 className="text-4xl font-bold mb-[50px] mt-[35px]" data-testid="heading">Dashboard</h1>
             <Unanswered/>
 
-            <Answered />   
-
         </div>
     );
 }

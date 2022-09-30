@@ -16,7 +16,7 @@ const Nav = ({dispatch, authedUserId, author}) => {
                   className="font-medium px-3 py-2 text-slate-700 hover:text-slate-100">Home</Link>
             <Link to="/leaderboard"
                   className="font-medium px-3 py-2 text-slate-700 hover:text-slate-100">Leaderboard</Link>
-            <Link to="/new"
+            <Link to="/add"
                   className="font-medium px-3 py-2 text-slate-700 hover:text-slate-100">New
                 Poll
             </Link>
@@ -31,7 +31,7 @@ const Nav = ({dispatch, authedUserId, author}) => {
             <div>
             <span
                 className="font-medium px-3 py-2 text-white"
-                data-testid="user-information"> {authedUserId}</span>
+                data-testid="user-information">User: {authedUserId}</span>
             <button onClick={logout}
                     className="font-medium px-3 py-2 text-red">Logout
             </button>

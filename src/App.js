@@ -27,7 +27,7 @@ function App({dispatch, loggedIn}) {
                 <Route path="/" element={<PrivateRoute><Dashboard/></PrivateRoute>}/>
                 <Route path="/leaderboard" exact element={<PrivateRoute><Leaderboard/></PrivateRoute>}/>
                 <Route path="/questions/:id" element={<PrivateRoute><PollPage/></PrivateRoute>}/>
-                <Route path="/new" element={<PrivateRoute><NewPoll/></PrivateRoute>}/>
+                <Route path="/add" element={<PrivateRoute><NewPoll/></PrivateRoute>}/>
                 <Route path="/answered" exact element={<PrivateRoute><Answered/></PrivateRoute>}/>
                 <Route path="/unanswered" exact element={<PrivateRoute><Unanswered/></PrivateRoute>}/>
                 <Route path="/404" exact element={<Error404/>}/>
