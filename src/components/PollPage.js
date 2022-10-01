@@ -2,12 +2,13 @@ import {connect} from "react-redux";
 import {Navigate, useNavigate, useParams} from "react-router-dom";
 import {handleAddAnswer} from "../actions/questions";
 import "./PollPage.css";
+import Error404 from '.././components/404'
 
 const PollPage = ({dispatch, authedUser, question, author}) => {
     const navigate = useNavigate();
 
     if (!authedUser || !question || !author) {
-        return <Navigate to="/404"/>;
+        return <Error404/>;
     }
 
     const hasVotedForOptionOne = question.optionOne.votes.includes(authedUser.id);

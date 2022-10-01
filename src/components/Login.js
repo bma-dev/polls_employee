@@ -1,21 +1,12 @@
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { handleLogin } from "../actions/authedUser";
-//import { _getUsers } from "../util/_DATA";
 
 const Login = ({ dispatch, loggedIn, users}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    // const [users, getUsers] = useState([]);
 
-    // useEffect(()=>{
-    //     const getUsers = async ()=>{
-    //      const users = await _getUsers();
-    //      getUsers(users);
-    //     }; 
-    //     getUsers();
-    //   },[]);
 
     if (loggedIn) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -48,7 +39,7 @@ const Login = ({ dispatch, loggedIn, users}) => {
         }
     }
 
-    return (  
+    return (
         <div className="w-[450px] mx-auto">
             <h1 className="text-3xl font-bold mt-9 mb-5 text-center" data-testid="login-heading">Login</h1>
 

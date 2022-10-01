@@ -30,7 +30,7 @@ function App({dispatch, loggedIn}) {
                 <Route path="/add" element={<PrivateRoute><NewPoll/></PrivateRoute>}/>
                 <Route path="/answered" exact element={<PrivateRoute><Answered/></PrivateRoute>}/>
                 <Route path="/unanswered" exact element={<PrivateRoute><Unanswered/></PrivateRoute>}/>
-                <Route path="/404" exact element={<Error404/>}/>
+                <Route path="*" element={<Error404 />} />
             </Routes>
         </div>
     );
