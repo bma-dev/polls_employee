@@ -26,3 +26,7 @@ The project can be run with
 The project can be viewed in the browser at
 
 - [http://localhost:3000](http://localhost:3000)
+
+## Authors
+
+* **AMINE** - *Initial work* - [BMA](https://github.com/bma-dev)
