@@ -4,12 +4,17 @@ import { handleAddAnswer } from "../actions/questions";
 import "./PollPage.css";
 import Error404 from ".././components/404";
 
-const PollPage = ({ dispatch, authedUser, question, author }) => {
-  const navigate = useNavigate();
+const PollPage = ({ dispatch, authedUser, questions, users }) => {
+  const { id } = useParams();
+  const question = questions[id];
 
   if (!question) {
     return <Error404 />;
   }
+
+  const author = Object.values(users).find(
+    (user) => user.id === question.author
+  );
 
   const hasVotedForOptionOne = question.optionOne.votes.includes(authedUser.id);
   const hasVotedForOptionTwo = question.optionTwo.votes.includes(authedUser.id);
@@ -18,13 +23,11 @@ const PollPage = ({ dispatch, authedUser, question, author }) => {
   const handleOptionOne = (e) => {
     e.preventDefault();
     dispatch(handleAddAnswer(question.id, "optionOne"));
-    navigate("/");
   };
 
   const handleOptionTwo = (e) => {
     e.preventDefault();
     dispatch(handleAddAnswer(question.id, "optionTwo"));
-    navigate("/");
   };
 
   const calcPercentage = (option, question) => {
@@ -104,13 +107,7 @@ const PollPage = ({ dispatch, authedUser, question, author }) => {
 };
 
 const mapStateToProps = ({ authedUser, users, questions }) => {
-  const question = Object.values(questions).find(
-    (question) => question.id === useParams().id
-  );
-  const author = Object.values(users).find(
-    (user) => user.id === question.author
-  );
-  return { authedUser, question, author };
+  return { authedUser, questions, users };
 };
 
 export default connect(mapStateToProps)(PollPage);
